@@ -21,6 +21,8 @@ Basicamente, optei por criar uma aplicação limpa no estilo três camadas com o
 
 Com o objetivo de evitar o excesso de ifs no código, procurei utilizar a implentação de operadores ternários e a classe Optional para prevenir NullPointerException.
 
+Criei as classses dos Testes Unitários pelo próprio Intellij, optei pelo JUnit 5 e Mockito.
+
 
 
 ############

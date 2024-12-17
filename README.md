@@ -1,8 +1,11 @@
 ###############
+
 MINIAUTORIZADOR
+
 ###############
 
 ###########
+
 Tecnologias e ferramentas
 
 JDK 17
@@ -17,6 +20,7 @@ Docker
 Postman
 
 ###########
+
 Considerações
 
 Basicamente, optei por criar uma aplicação limpa no estilo três camadas com o Controller chamado um Service que por sua vez chama um Repository que utiliza os métodos Save (herdado de JPARpository) e a customização de um método para a busca das informações dos cartões. Inclusive, como o body do response precisava ser customizado, optei por implementar VOs.

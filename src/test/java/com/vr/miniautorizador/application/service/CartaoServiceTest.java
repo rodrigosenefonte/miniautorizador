@@ -3,7 +3,6 @@ package com.vr.miniautorizador.application.service;
 import com.vr.miniautorizador.application.model.Cartao;
 import com.vr.miniautorizador.application.model.Transacao;
 import com.vr.miniautorizador.application.repository.CartaoRepository;
-import com.vr.miniautorizador.application.service.CartaoService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -27,83 +26,66 @@ public class CartaoServiceTest {
 
     @Test
     public void testarCriarCartao() {
-        // Cenário
+
         Cartao cartao = getCartao();
 
-        // Ação
         Cartao cartaoCriado = service.criarCartao(cartao);
 
-        // Verificação
         assertNull(cartaoCriado);
-        //assertEquals(new BigDecimal("500.00"), cartaoCriado.getSaldo());
-      //  verify(repository, times(1)).save(cartao);
     }
 
     @Test
     public void testarBuscarCartaoExistente() {
-        // Cenário
+        
         Cartao cartao = getCartao();
         when(repository.findByNumeroCartao(any())).thenReturn(cartao);
 
-        // Ação
         Cartao cartaoEncontrado = service.buscarCartao("1234");
 
-        // Verificação
         assertNotNull(cartaoEncontrado);
         assertEquals(cartao, cartaoEncontrado);
     }
 
     @Test
     public void testarBuscarCartaoInexistente() {
-        // Cenário
+
         when(repository.findByNumeroCartao(any())).thenReturn(null);
 
-        // Ação
         Cartao cartaoEncontrado = service.buscarCartao("1234");
 
-        // Verificação
         assertNull(cartaoEncontrado);
     }
 
     @Test
     public void testarRealizarTransacaoSucesso() {
-        // Cenário
+
         Cartao cartao = getCartao();
         when(repository.findByNumeroCartao(any())).thenReturn(cartao);
         Transacao transacao = getTransacao(new BigDecimal("500.00"));
 
-        // Ação
         String resultado = service.realizarTransacao(transacao);
 
-        // Verificação
         assertEquals("OK", resultado);
         verify(repository, times(1)).save(cartao);
     }
 
     @Test
     public void testarRealizarTransacaoCartaoInexistente() {
-        // Cenário
+
         when(repository.findByNumeroCartao(any())).thenReturn(null);
         Transacao transacao = getTransacao(new BigDecimal("500.00"));
 
-        // Ação
         String resultado = service.realizarTransacao(transacao);
 
-        // Verificação
         assertEquals("CARTAO_INEXISTENTE", resultado);
     }
 
     @Test
     public void testarRealizarTransacaoSenhaInvalida() {
-        // Cenário
         Cartao cartao = getCartao();
         when(repository.findByNumeroCartao(any())).thenReturn(cartao);
         Transacao transacao = getTransacao(new BigDecimal("500.00"));
-
-        // Ação
         String resultado = service.realizarTransacao(transacao);
-
-        // Verificação
     }
 
     private Cartao getCartao() {

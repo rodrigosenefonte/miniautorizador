@@ -1,6 +1,5 @@
 package com.vr.miniautorizador.application.controller;
 
-import com.vr.miniautorizador.application.controller.TransacaoController;
 import com.vr.miniautorizador.application.model.Transacao;
 import com.vr.miniautorizador.application.service.CartaoService;
 import org.junit.jupiter.api.Test;

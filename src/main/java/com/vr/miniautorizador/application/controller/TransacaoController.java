@@ -1,5 +1,6 @@
 package com.vr.miniautorizador.application.controller;
 
+import com.vr.miniautorizador.application.enumerator.CartaoEnum;
 import com.vr.miniautorizador.application.model.Transacao;
 import com.vr.miniautorizador.application.service.CartaoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,6 @@ public class TransacaoController {
     @PostMapping
     public ResponseEntity<String> realizarTransacao(@RequestBody Transacao transacao) {
         String resultado = service.realizarTransacao(transacao);
-        return ResponseEntity.status(resultado.equals("OK") ? 201 : 422).body(resultado);
+        return ResponseEntity.status(resultado.equals(CartaoEnum.OK.getDescricao()) ? 201 : 422).body(resultado);
     }
 }

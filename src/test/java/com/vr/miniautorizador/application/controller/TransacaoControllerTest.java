@@ -1,4 +1,4 @@
-package com.vr.miniautorizador.controller;
+package com.vr.miniautorizador.application.controller;
 
 import com.vr.miniautorizador.application.controller.TransacaoController;
 import com.vr.miniautorizador.application.model.Transacao;

@@ -1,4 +1,4 @@
-package com.vr.miniautorizador.service;
+package com.vr.miniautorizador.application.service;
 
 import com.vr.miniautorizador.application.model.Cartao;
 import com.vr.miniautorizador.application.model.Transacao;

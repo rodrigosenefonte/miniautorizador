@@ -23,6 +23,8 @@ Com o objetivo de evitar o excesso de ifs no código, procurei utilizar a implen
 
 Criei as classses dos Testes Unitários pelo próprio Intellij, optei pelo JUnit 5 e Mockito.
 
+Para tentar previnir um possível problema relacionado a concorrência, eu optei por utilziar a anotração @Transational do Spring
+
 
 
 ############
@@ -30,5 +32,6 @@ Sites úteis:
 
 https://start.spring.io/
 https://docs.spring.io/spring-security/reference/servlet/authentication/passwords/index.html
+https://docs.spring.io/spring-framework/reference/data-access/transaction/declarative/annotations.html
 
 

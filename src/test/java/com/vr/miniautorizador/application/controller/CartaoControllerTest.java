@@ -1,6 +1,5 @@
-package com.vr.miniautorizador.controller;
+package com.vr.miniautorizador.application.controller;
 
-import com.vr.miniautorizador.application.controller.CartaoController;
 import com.vr.miniautorizador.application.model.Cartao;
 import com.vr.miniautorizador.application.service.CartaoService;
 import com.vr.miniautorizador.application.vo.CartaoVO;

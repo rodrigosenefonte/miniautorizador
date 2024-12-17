@@ -2,16 +2,15 @@ server:
   port: 8080
 spring:
   application:
-    name: customer
+    name: miniatutorizador
   datasource:
-    password: password
-    url: jdbc:postgresql://localhost:5432/miniautorizador
-    username: rodrigosenefonte@hotmail.com
+    username: root
+    url: jdbc:mysql://localhost:3306/miniautorizador
   jpa:
     hibernate:
       ddl-auto: update
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
+        dialect: org.hibernate.dialect.MySQL8Dialect
         format_sql: true
 

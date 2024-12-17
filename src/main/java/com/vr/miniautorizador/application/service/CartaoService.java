@@ -7,6 +7,7 @@ import com.vr.miniautorizador.application.vo.CartaoVO;
 import com.vr.miniautorizador.application.vo.SaldoVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.util.Optional;
@@ -26,6 +27,7 @@ public class CartaoService {
         return repository.findByNumeroCartao(numeroCartao);
     }
 
+    @Transactional
     public String realizarTransacao(Transacao transacao) {
         Cartao cartao = buscarCartao(transacao.getNumeroCartao());
 
